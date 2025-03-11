@@ -1,0 +1,11 @@
+/* ==========================
+   Home
+========================== */
+
+@use '../../assets/styles/variables' as vars;
+@use '../../assets/styles/mixins' as mixins;
+
+.footer-home{
+    padding-top: 66px;
+    padding-bottom: 29px;
+}

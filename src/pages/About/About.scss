@@ -1,0 +1,56 @@
+/* ==========================
+   Page À Propos
+========================== */
+
+@use '../../assets/styles/variables' as vars;
+@use '../../assets/styles/mixins' as mixins;
+
+.about{
+  &-header {
+    margin: 50px 100px 38px 100px;
+  }
+  &-footer{
+    margin-top: 38px;
+  }
+}
+  .about-main{
+    /* Banner */
+    &-banner {
+      background-image: url('../../assets/images/Image%20source%202.png'); //   Image de la bannière
+      margin-bottom: 38px;
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+
+    /* Collapse Container */
+    &-collapse-container {
+      flex-direction: column;
+      gap: 30px;
+      margin: 0 10% ;
+    }
+    &-collapse-container .collapse-btn{
+      border-radius: 5px;
+      font-size: 24px;
+    }
+  }
+
+/* Responsive Styles */
+@include mixins.mobile {
+  .about{
+    &-header {
+      margin: 20px 20px 19px 20px!important;
+    }
+    &-footer{
+      margin-top: 19px!important;
+    }
+    &-main-collapse-container{
+      margin: 0;
+      gap: 20px;
+    }
+    &-main-banner{
+      margin-bottom: 19px;
+    }
+    &-main-collapse-container .collapse-btn{
+      font-size: 13px;
+    }
+  }
+}

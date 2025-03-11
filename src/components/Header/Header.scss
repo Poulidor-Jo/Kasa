@@ -1,0 +1,70 @@
+/* ==========================
+   Header
+========================== */
+@use '../../assets/styles/variables' as vars;
+@use '../../assets/styles/mixins' as mixins;
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 50px 100px;
+
+  &-logo {
+    font-size: 24px;
+    font-weight: 500;
+
+    img {
+      width: 150px;
+    }
+  }
+
+  &-nav {
+    display: flex;
+    gap: 57px;
+
+    .nav-link {
+      font-size: 24px;
+      font-weight: vars.$font-weight-medium;
+      color: vars.$black;
+      text-decoration: none;
+      position: relative; // Nécessaire pour le soulignement personnalisé
+
+      &:hover {
+        color: vars.$primary-red;
+      }
+
+      &.active::after {
+        content: ''; // Éléments pseudo pour la ligne
+        position: absolute;
+        bottom: 0; // Place le soulignement sous le texte
+        left: 0;
+        width: 100%; // Largeur égale au texte
+        height: 2px; // Épaisseur de la ligne
+        background-color: vars.$black; // Couleur de la ligne
+      }
+    }
+  }
+
+  @include mixins.mobile {
+    margin:  20px 27px;
+
+    &-nav {
+      gap: 26px;
+
+      .nav-link {
+        font-size: 12px;
+        text-transform: uppercase;
+      }
+    }
+
+    &-nav .nav-link.active::after {
+      display: none;
+    }
+
+    &-logo img{
+      width: 145px; /* Logo mobile */
+      height: auto;
+    }
+  }
+}

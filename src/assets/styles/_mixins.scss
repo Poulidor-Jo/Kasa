@@ -1,0 +1,12 @@
+/* ==========================
+   Mixins
+========================== */
+
+// ==========================
+// Mixin pour gérer les styles mobiles
+// ==========================
+@mixin mobile {
+  @media (max-width: 768px) {
+    @content;
+  }
+}

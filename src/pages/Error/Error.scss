@@ -1,0 +1,83 @@
+/* ==========================
+   Page 404
+========================== */
+
+@use '../../assets/styles/variables' as vars;
+@use '../../assets/styles/mixins' as mixins;
+
+  /* Header */
+  .error-header {
+    margin: 40px 100px 139px 100px; // Marge de 100px à gauche et à droite
+  }
+
+  /* Main Content */
+  .main-404 {
+    display: flex;
+    flex-direction: column;
+    gap: 139px;
+    align-items: center;
+    margin-bottom: 0;
+  }
+  
+  .error-code {
+    font-size: 288px;
+    font-weight: vars.$font-weight-bold;
+    color: vars.$primary-red;   
+  }
+
+  .error-message {
+    font-size: 36px;
+    font-weight: vars.$font-weight-regular;
+    color: vars.$primary-red;
+    text-align: center;
+    margin: 20px 0; // Espacement entre le code d'erreur et le message   
+  }
+
+  .back-home {
+    font-size: 18px;
+    font-weight: vars.$font-weight-regular;
+    color: vars.$black;
+    text-decoration: none;
+    border-bottom: 1px solid vars.$black; // Soulignement stylisé
+    transition: opacity 0.3s ease;
+
+    &:hover {
+      opacity: 0.7; // Soulignement stylisé
+    }
+  }
+
+  /* Footer */
+  .footer-404 {
+    margin-top: 139px;
+    .footer-logo img {
+      filter: brightness(0) invert(1); // Logo en blanc
+      width: 122px;
+      height: 39px;
+    }
+  }
+
+  @include mixins.mobile {
+    .error-header {
+      margin: 20px 20px 113px;
+    }
+
+    .error-code {
+      font-size: 96px; // Taille réduite pour mobile
+    }
+
+    .error-message {
+      font-size: 18px;
+    }
+
+    .back-home {
+      font-size: 14px;
+    }
+
+    .main-404 {
+      gap: 113px;
+    }
+
+    .footer-404{
+      margin-top: 113px;
+    }
+  }

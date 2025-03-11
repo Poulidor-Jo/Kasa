@@ -1,0 +1,81 @@
+/* ==========================
+   Slides
+========================== */
+@use '../../assets/styles/variables' as vars;
+@use '../../assets/styles/mixins' as mixins;
+
+.carousel {
+  position: relative;
+  margin: 0 auto 30px;
+  max-width: 1200px;
+  width: 100%;
+
+  &-image {
+    width: 100%;
+    height: 415px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+
+  .chevron {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 79px;
+    color: vars.$white;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    &-left {
+      left: 15px;
+    }
+
+    &-right {
+      right: 15px;
+    }
+  }
+
+  &-counter {
+    position: absolute;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: vars.$white;
+    font-size: 18px;
+    font-weight: vars.$font-weight-medium;;
+  }
+
+  @include mixins.mobile {
+    margin: 0 auto 15px;
+    padding: 0;
+
+    &-image {
+       width: 100%;
+      height: 277px; 
+      object-fit: cover; /* Affiche l'image complète avec son rapport hauteur/largeur */
+    }
+    
+    &-counter {
+      display: none;
+    }
+
+    .chevron {
+      font-size: 24px;
+      top: 50%;
+      transform: translateY(-50%);
+      padding: 15px;
+    
+      &-left {
+        left: 5px; // Ajusté pour les mobiles
+      }
+
+      &-right {
+        right: 5px; // Ajusté pour les mobiles
+      }
+    }
+  }
+}

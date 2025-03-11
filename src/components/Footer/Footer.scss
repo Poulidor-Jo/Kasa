@@ -1,0 +1,64 @@
+/* ==========================
+   Composant Footer
+========================== */
+
+@use '../../assets/styles/variables' as vars;
+@use '../../assets/styles/mixins' as mixins;
+
+.footer {
+  background: vars.$black;
+  color: vars.$white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 50px 30px 50px;
+  gap: 30px;
+  height: 209px;
+  margin-top: 50px; // Espace entre le footer et la section précédente
+
+  &-logo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+
+    img {
+      filter: brightness(0) invert(1); // Rend l'image blanche
+      width: 122px;
+      height: 39px;
+    }
+  }
+
+  p {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  /* Responsive Styles */
+  @include mixins.mobile {
+    height: auto;
+    padding-bottom: 58px;
+    padding-top: 66px;
+    gap: 10px;
+    margin-top: 0;
+    justify-content: center;
+    margin-top: 113px;
+
+    p {
+      font-size: 12px;
+      line-height: 1.4;
+      max-width: 120px;
+    }
+
+    &-logo {
+      margin: 0;
+      img {
+        width: 100px;
+        height: auto;
+      }
+      p{
+        font-size: 12px;
+        font-weight: vars.$font-weight-medium;
+      }
+    }
+  }
+}

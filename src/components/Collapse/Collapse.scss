@@ -1,0 +1,89 @@
+/* ==========================
+   Collapse Sections
+========================== */
+
+@use '../../assets/styles/variables' as vars;
+@use '../../assets/styles/mixins' as mixins;
+
+.collapse-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 76px;
+  max-width: 1200px;
+  margin: 24px auto 0;
+}
+
+.collapse {
+  flex: 1;
+  position: relative;
+
+  &-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: vars.$primary-red;
+    color: vars.$white;
+    border: none;
+    padding: 10px;
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: vars.$font-weight-bold;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100%;
+  }
+
+  &-content {
+    max-height: 0;
+    background: vars.$white;
+    font-size: 18px;
+    font-weight: vars.$font-weight-regular;
+    padding: 15px;
+    border-top: none;
+    border-radius: 0 0 5px 5px;
+    transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
+  }
+
+  &-content.show {
+    max-height: 500px; /* Ajuster selon le contenu */
+    padding: 16px 20px;
+  }
+
+  &-content ul {
+    list-style: none;
+  }
+
+  // Chevron rotation
+  &-btn i {
+    transform: rotate(180deg); // Chevron pointe vers le bas par défaut
+    transition: transform 0.3s ease; // Transition fluide pour la rotation
+  }
+  
+  &-btn.open i {
+    transform: rotate(180deg); // Chevron pointe vers le haut si ouvert
+  }
+
+}
+
+/* Responsive Styles */
+@include mixins.mobile {
+  .collapse-container {
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 20px;
+  }
+
+  .collapse-btn {
+    font-size: 13px;
+  }
+
+  .collapse-content {
+    padding: 10px 15px;
+    font-size: 13px;
+   
+    }
+  .collapse-content.show{
+      font-size: 12px;
+      padding-top: 13px;
+    }
+}

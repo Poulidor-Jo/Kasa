@@ -1,0 +1,148 @@
+/* ==========================
+   Card Detail
+========================== */
+@use '../../assets/styles/variables' as vars;
+@use '../../assets/styles/mixins' as mixins;
+
+.detailed-card {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin: 0 auto;
+    max-width: 1200px;
+  
+    .details-info {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      flex: 1;
+      
+      .details-header {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      
+        &-title {
+          font-size: 36px;
+          font-weight: vars.$font-weight-medium;
+          color: vars.$primary-red;
+        }
+    
+        &-location {
+          font-weight: vars.$font-weight-medium;
+          font-size: 18px;
+        }
+      }
+  
+      .details-tags {
+        display: flex;
+        gap: 10px;
+        font-weight: vars.$font-weight-bold;
+  
+        .tag {
+          background: vars.$primary-red;
+          min-width: 115px;
+          border-radius: 10px;
+          padding: 5px 10px;
+  
+          p {
+            font-size: 14px;
+            color: vars.$white;
+            text-align: center;
+          }
+        }
+      }
+    }
+  
+    .host-rating {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 21px;
+      font-weight: vars.$font-weight-medium;
+  
+      .host {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+  
+        .host-name {
+          text-align: right;
+          color: vars.$primary-red;
+  
+          p {
+            margin: 0;
+            font-size: 16px;
+            font-weight:vars.$font-weight-medium;
+          }
+        }
+  
+        .host-picture {
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          overflow: hidden;
+  
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+  
+      .rating {
+        display: flex;
+  
+        .fa-star {
+          font-size: 20px;
+          margin: 0 2px;
+          color: vars.$primary-red;
+  
+          &.empty {
+            color: vars.$gray;
+          }
+        }
+      }
+    }
+  }
+  /* Responsive Styles */
+@include mixins.mobile {
+  .detailed-card{
+    flex-direction: column;
+    .details-info{
+      gap: 10px;
+      .details-header{
+        gap: 5px;
+        &-title{
+          font-size:18px ;
+        }
+        &-location{
+          font-size: 14px;
+        }
+      }
+      .details-tags{
+        .tag{
+          min-width: 84px;
+        }
+        .tag p{
+          font-size: 10px;
+          font-weight:vars.$font-weight-bold;
+        }
+      }
+    }
+    .host-rating{
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      align-items: center;
+    
+      .host .host-name p{
+        font-size: 12px;
+      }
+
+      .rating .fa-star{
+        font-size: 18px;
+      }
+    }
+  }
+}

@@ -1,0 +1,57 @@
+/* ==========================
+   Banner
+========================== */
+// Import des variables globales (à ajuster selon votre structure)
+@use '../../assets/styles/variables' as vars;
+@use '../../assets/styles/mixins' as mixins;
+
+.banner {
+  position: relative;
+  height: 223px;
+  width: 100%;
+  background-image: url('../../assets/images/Image\ source\ 1.png');
+  background-size: cover; // Remplit le conteneur sans déformer l'image
+  background-position: center; // Centre l'image
+  overflow: hidden; // Pour éviter que le contenu dépasse
+  border-radius: 25px;
+  margin-bottom: 43px; // Espace entre la bannière et les logements
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); // Couleur noire avec 40% d'opacité
+    z-index: 1; // Place la couche d'opacité entre l'image et le texte
+  }
+
+  &-title {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: vars.$white;
+    font-size: 48px;
+    $font-weight-bold: 700;
+    text-align: center;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    z-index: 2; // Assure que le texte est au-dessus de la couche d'opacité
+  }
+
+  @include mixins.mobile {
+    height: 110px; // Réduit la hauteur de la bannière
+    border-radius: 8px;
+    margin-bottom: 22px;
+
+    &-title {
+      font-size: 24px;
+      left: 0; // Alignement gauche avec marge
+      transform: translateY(-50%);
+      padding-left: 16px;
+      text-align: left; // Aligné à gauche
+    }
+  }
+}

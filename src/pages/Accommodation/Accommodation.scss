@@ -1,0 +1,17 @@
+/* ==========================
+   Logement
+========================== */
+
+@use '../../assets/styles/variables' as vars;
+@use '../../assets/styles/mixins' as mixins;
+
+/* Responsive Styles */
+@include mixins.mobile {
+    .header-accomodations{
+        margin-bottom: 27px;
+    }
+
+    .footer-accomodations{
+        margin-top: 27px;
+    }
+}

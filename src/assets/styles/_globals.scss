@@ -1,0 +1,18 @@
+/* ==========================
+   Styles Généraux
+========================== */
+@use './variables' as vars;
+
+// ==========================
+// Styles Généraux
+// ==========================
+body {
+  font-family: vars.$font-family-montserrat;
+  font-weight: vars.$font-weight-regular; // Poids par défaut
+  color: vars.$black;
+}
+
+a {
+  text-decoration: none;
+  color: vars.$black;
+}
