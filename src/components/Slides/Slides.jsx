@@ -16,6 +16,7 @@ const Slides = ({ pictures }) => {
 };
 
 Slides.propTypes = {
+  
   pictures: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
