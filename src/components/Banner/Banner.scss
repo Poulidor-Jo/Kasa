@@ -15,6 +15,10 @@
   overflow: hidden; // Pour éviter que le contenu dépasse
   border-radius: 25px;
   margin-bottom: 43px; // Espace entre la bannière et les logements
+  &.about-main-banner {
+    background-image: url('../../assets/images/Image\ source\ 2.png');
+  }
+  
 
   &::after {
     content: '';

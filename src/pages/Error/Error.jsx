@@ -1,4 +1,3 @@
-import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import './Error.scss'; // Import des styles spécifiques pour la page 404
 import { Link } from 'react-router-dom';
@@ -6,8 +5,6 @@ import { Link } from 'react-router-dom';
 const Error = () => {
   return (
     <div className="error-page">
-      {/* Header */}
-      <Header />
 
       {/* Main Content */}
       <main className="main-404">

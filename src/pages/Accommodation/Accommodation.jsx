@@ -1,5 +1,4 @@
 import { useParams, Navigate  } from 'react-router-dom';
-import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import Slides from '../../components/Slides/Slides';
 import DetailedCard from '../../components/DetailedCard/DetailedCard';
@@ -17,7 +16,6 @@ const Accommodation = () => {
 
   return (
     <div className="accommodation">
-      <Header />
       <main className="main-logement">
         {/* Carrousel */}
         <Slides pictures={accommodation.pictures} />
@@ -34,7 +32,7 @@ const Accommodation = () => {
         {/* Collapse Sections */}
         <div className="collapse-container">
           <Collapse title="Description" content={accommodation.description} />
-          <Collapse
+          <Collapse 
             title="Équipements"
             content={
               <ul>

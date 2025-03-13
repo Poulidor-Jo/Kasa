@@ -3,12 +3,14 @@ import PropTypes from 'prop-types';
 import './Collapse.scss';
 
 const Collapse = ({ title, content }) => {
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <div className="collapse">
-      <button className={`collapse-btn`}>
+      <button className={`collapse-btn`} onClick={() => setIsOpen(!isOpen)}>
         {title}
       </button>
       <div className={`collapse-content`}>
+        {isOpen ? <span className="collapse-arrow">ouvert</span> : <span className="collapse-arrow">fermer</span>}
         {typeof content === 'string' ? <p>{content}</p> : content}
       </div>
     </div>

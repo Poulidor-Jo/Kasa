@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types'; // Import PropTypes
 import './Banner.scss'; // Assure-toi que ce chemin est correct
 
-const Banner = ({ className, title }) => {
+const Banner = ({ customClass, title }) => {
   return (
-    <section className={`banner ${className || ''}`}>
+    <section className={`banner ${customClass || ''}`}>
       {title && <h1 className="banner-title">{title}</h1>}
     </section>
   );

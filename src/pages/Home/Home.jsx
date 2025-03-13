@@ -1,4 +1,3 @@
-import Header from '../../components/Header/Header';
 import Banner from '../../components/Banner/Banner';
 import Card from '../../components/Card/Card';
 import Footer from '../../components/Footer/Footer';
@@ -8,8 +7,6 @@ import './Home.scss'; // Import des styles spécifiques à la page Home
 const Home = () => {
   return (
     <div className="home">
-      {/* Header */}
-      <Header />
 
       <main className="main-index">
         {/* Banner */}
