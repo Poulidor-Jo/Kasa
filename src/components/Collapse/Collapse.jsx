@@ -4,15 +4,18 @@ import './Collapse.scss';
 
 const Collapse = ({ title, content }) => {
   const [isOpen, setIsOpen] = useState(false);
+
   return (
     <div className="collapse">
-      <button className={`collapse-btn`} onClick={() => setIsOpen(!isOpen)}>
+      <button className={`collapse-btn ${isOpen ? 'open' : ''}`} onClick={() => setIsOpen(!isOpen)}>
         {title}
+        <i className={`fa-solid ${isOpen ? 'fa-chevron-up' : 'fa-chevron-down'}`}></i>
       </button>
-      <div className={`collapse-content`}>
-        {isOpen ? <span className="collapse-arrow">ouvert</span> : <span className="collapse-arrow">fermer</span>}
-        {typeof content === 'string' ? <p>{content}</p> : content}
-      </div>
+      {isOpen && (
+        <div className={`collapse-content ${isOpen ? 'show' : ''}`}>
+          {typeof content === 'string' ? <p>{content}</p> : content}
+        </div>
+      )}
     </div>
   );
 };
