@@ -11,7 +11,7 @@ const Banner = ({ customClass, title }) => {
 
 // Validation des props
 Banner.propTypes = {
-  className: PropTypes.string,
+  customClass: PropTypes.string,
   title: PropTypes.string, // Enlever .isRequired pour le rendre optionnel
 };
 
