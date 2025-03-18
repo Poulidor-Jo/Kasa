@@ -1,17 +1,46 @@
-import { useParams, Navigate  } from 'react-router-dom';
+import { useParams, Navigate } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 import Footer from '../../components/Footer/Footer';
 import Slides from '../../components/Slides/Slides';
 import DetailedCard from '../../components/DetailedCard/DetailedCard';
 import Collapse from '../../components/Collapse/Collapse';
-import accommodations from '../../data/accommodations.json';
 import './Accommodation.scss';
 
 const Accommodation = () => {
   const { id } = useParams();
-  const accommodation = accommodations.find((item) => item.id === id);
+  const [accommodation, setAccommodation] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false); // Utilisation d'un booléen pour simplifier
 
-  if (!accommodation) {
-    return <Navigate to="/404" replace />;
+  useEffect(() => {
+    const fetchAccommodation = async () => {
+      try {
+        const response = await fetch('/src/data/accommodations.json');
+        if (!response.ok) {
+          throw new Error('Erreur lors du chargement des données');
+        }
+        const data = await response.json();
+        const foundAccommodation = data.find((item) => item.id === id);
+        if (!foundAccommodation) {
+          throw new Error('Logement introuvable');
+        }
+        setAccommodation(foundAccommodation);
+      } catch (err) {
+        setError(true); // Déclenche une redirection en cas d'erreur
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchAccommodation();
+  }, [id]);
+
+  if (error) {
+    return <Navigate to="/404" replace />; // Redirection vers la page 404
+  }
+
+  if (loading) {
+    return <p>Chargement des données...</p>;
   }
 
   return (
@@ -32,7 +61,7 @@ const Accommodation = () => {
         {/* Collapse Sections */}
         <div className="collapse-container">
           <Collapse title="Description" content={accommodation.description} />
-          <Collapse 
+          <Collapse
             title="Équipements"
             content={
               <ul>
