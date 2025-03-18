@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import Banner from '../../components/Banner/Banner';
 import Card from '../../components/Card/Card';
 import Footer from '../../components/Footer/Footer';
-import './Home.scss'; // Import des styles spécifiques à la page Home
+import './Home.scss';
 
 const Home = () => {
   const [accommodations, setAccommodations] = useState([]);
@@ -12,16 +12,16 @@ const Home = () => {
   useEffect(() => {
     const fetchAccommodations = async () => {
       try {
-        const response = await fetch('/src/data/accommodations.json'); 
+        const response = await fetch('/src/data/accommodations.json');
         if (!response.ok) {
           throw new Error('Erreur lors du chargement des données');
         }
         const data = await response.json();
-        setAccommodations(data);
+        setAccommodations(data); // Mise à jour de l'état
       } catch (err) {
-        setError(err.message);
+        setError(err.message); // Gestion des erreurs
       } finally {
-        setLoading(false);
+        setLoading(false); // Fin du chargement
       }
     };
 
@@ -39,10 +39,7 @@ const Home = () => {
   return (
     <div className="home">
       <main className="main-index">
-        {/* Banner */}
         <Banner title="Chez vous, partout et ailleurs" />
-
-        {/* Liste des logements */}
         <div className="housing housing-index">
           <section className="housing-grid">
             {accommodations.map(({ id, cover, title }) => (
@@ -51,8 +48,6 @@ const Home = () => {
           </section>
         </div>
       </main>
-
-      {/* Footer */}
       <Footer />
     </div>
   );

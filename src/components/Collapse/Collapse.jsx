@@ -3,11 +3,14 @@ import PropTypes from 'prop-types';
 import './Collapse.scss';
 
 const Collapse = ({ title, content }) => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false); // Initialisation de l'état
 
   return (
     <div className="collapse">
-      <button className={`collapse-btn ${isOpen ? 'open' : ''}`} onClick={() => setIsOpen(!isOpen)}>
+      <button
+        className={`collapse-btn ${isOpen ? 'open' : ''}`}
+        onClick={() => setIsOpen(!isOpen)} // Mise à jour de l'état
+      >
         {title}
         <i className={`fa-solid ${isOpen ? 'fa-chevron-up' : 'fa-chevron-down'}`}></i>
       </button>
