@@ -7,11 +7,14 @@ const Header = () => {
 
   // Détermine la classe du header en fonction de la page
   const headerClass = (() => {
-      if (location.pathname === "/about") return "about-header ";
-      //if (location.pathname === "/accommodations") return "footer-accommodations";
-      if (location.pathname === "/404") return "error-header";
-      return "header"; // Par défaut pour la page d'accueil
-    })();
+    if (location.pathname === "/about") {
+      return "about-header ";
+    }
+    if (location.pathname === "/404") {
+      return "error-header";
+    }
+    return "header"; // Par défaut pour la page d'accueil
+  })();
 
   return (
     <header className={`header ${headerClass}`}>
