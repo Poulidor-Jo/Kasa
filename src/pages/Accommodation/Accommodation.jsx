@@ -65,8 +65,8 @@ const Accommodation = () => {
             title="Équipements"
             content={
               <ul>
-                {accommodation.equipments.map((item, index) => (
-                  <li key={index}>{item}</li>
+                {accommodation.equipments.map((item) => (
+                  <li key={`equipment-${item.id}`}>{item}</li>
                 ))}
               </ul>
             }

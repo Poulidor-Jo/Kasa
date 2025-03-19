@@ -31,10 +31,21 @@ const Slides = ({ pictures }) => {
         <>
           <i
             className="fa-solid fa-chevron-left chevron chevron-left"
+            role="button"
+            tabIndex="0"
             onClick={goToPrevious}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') goToPrevious();
+            }}
           ></i>
           <i
             className="fa-solid fa-chevron-right chevron chevron-right"
+            role="button"
+            tabIndex="0"
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') goToNext();
+            }
+            }
             onClick={goToNext}
           ></i>
         </>
