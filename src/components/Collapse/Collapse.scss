@@ -41,12 +41,13 @@
     padding: 15px;
     border-top: none;
     border-radius: 0 0 5px 5px;
-    transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
+    transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out, background-color 0.3s ease-in-out;
   }
 
   &-content.show {
     max-height: 500px; /* Ajuster selon le contenu */
     padding: 16px 20px;
+    background: vars.$lightgray; /* Ajout du fond couleur #F6F6F6 */
   }
 
   &-content ul {
