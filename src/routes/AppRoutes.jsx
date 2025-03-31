@@ -7,7 +7,7 @@ import Accommodation from '../pages/Accommodation/Accommodation';
 
 const AppRoutes = () => {
   return (
-    <Router>
+    <Router future={{ v7_relativeSplatPath: true, v7_startTransition: true }}>
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
