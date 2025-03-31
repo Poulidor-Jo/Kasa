@@ -4,7 +4,7 @@ import Footer from '../../components/Footer/Footer';
 import Slides from '../../components/Slides/Slides';
 import DetailedCard from '../../components/DetailedCard/DetailedCard';
 import Collapse from '../../components/Collapse/Collapse';
-import './Accommodation.scss';
+
 
 const Accommodation = () => {
   const { id } = useParams();

@@ -8,11 +8,7 @@ const About = () => {
   const location = useLocation();
 
   return (
-    <div
-      className={`about ${
-        location.pathname === "/about" ? "about-active" : ""
-      }`}
-    >
+    <div className="about">
       <main className="about-main">
         {/* Banner */}
         <Banner customClass="about-main-banner" />

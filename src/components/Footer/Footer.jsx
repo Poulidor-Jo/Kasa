@@ -6,12 +6,7 @@ const Footer = () => {
   const location = useLocation();
   
   // Définir une classe spécifique en fonction de la page actuelle
-  const footerClass = (() => {
-    if (location.pathname === "/about") return "about-footer";
-    if (location.pathname === "/accommodations") return "footer-accommodations";
-    if (location.pathname === "/404") return "footer-404";
-    return "footer"; // Par défaut pour la page d'accueil
-  })();
+  const footerClass = location.pathname === "/about" ? "about-footer" : "footer";
 
   return (
     <footer className={`footer ${footerClass}`}>
