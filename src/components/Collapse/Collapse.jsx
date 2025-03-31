@@ -8,11 +8,11 @@ const Collapse = ({ title, content }) => {
   return (
     <div className="collapse">
       <button
-        className={`collapse-btn ${isOpen ? 'open' : ''}`}
+        className={`collapse-btn ${isOpen ? 'open' : ''}`} // Ajout dynamique de la classe `open`
         onClick={() => setIsOpen(!isOpen)} // Mise à jour de l'état
       >
         {title}
-        <i className={`fa-solid ${isOpen ? 'fa-chevron-up' : 'fa-chevron-down'}`}></i>
+        <i className="fa-solid fa-chevron-down"></i> {/* Chevron par défaut */}
       </button>
       {isOpen && (
         <div className={`collapse-content ${isOpen ? 'show' : ''}`}>

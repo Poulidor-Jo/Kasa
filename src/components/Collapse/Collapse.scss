@@ -56,12 +56,12 @@
 
   // Chevron rotation
   &-btn i {
-    transform: rotate(180deg); // Chevron pointe vers le bas par défaut
-    transition: transform 0.3s ease; // Transition fluide pour la rotation
+    transform: rotate(0deg); // Chevron pointe vers le haut par défaut
+    transition: transform 0.8s ease; // Transition fluide pour la rotation
   }
   
   &-btn.open i {
-    transform: rotate(180deg); // Chevron pointe vers le haut si ouvert
+    transform: rotate(180deg); // Chevron pointe vers le bas si ouvert
   }
 
 }
@@ -87,4 +87,13 @@
       font-size: 12px;
       padding-top: 13px;
     }
+}
+
+.collapse-btn i {
+  transform: rotate(180deg); // Chevron pointe vers le bas par défaut
+  transition: transform 0.3s ease; // Transition fluide pour la rotation
+}
+
+.collapse-btn.open i {
+  transform: rotate(0deg); // Chevron pointe vers le haut si ouvert
 }
