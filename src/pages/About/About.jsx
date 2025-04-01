@@ -1,11 +1,10 @@
 import { useLocation } from "react-router-dom";
 import Banner from "../../components/Banner";
 import Collapse from "../../components/Collapse/Collapse";
-import Footer from "../../components/Footer/Footer";
 import "./About.scss";
 
 const About = () => {
-  const location = useLocation();
+ 
 
   return (
     <div className="about">
@@ -39,11 +38,8 @@ const About = () => {
           ))}
         </div>
       </main>
-
-      {/* Footer */}
-      <Footer className="about-footer" />
     </div>
   );
 };
 
-export default About;
+export default About; 

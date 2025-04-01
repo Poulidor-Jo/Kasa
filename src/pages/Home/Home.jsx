@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import Banner from '../../components/Banner';
 import Card from '../../components/Card/Card';
-import Footer from '../../components/Footer/Footer';
 import './Home.scss';
 
 const Home = () => {
@@ -12,7 +11,7 @@ const Home = () => {
   useEffect(() => {
     const fetchAccommodations = async () => {
       try {
-        const response = await fetch('/src/data/accommodations.json');
+        const response = await fetch('/accommodations.json');
         if (!response.ok) {
           throw new Error('Erreur lors du chargement des données');
         }
@@ -48,7 +47,6 @@ const Home = () => {
           </section>
         </div>
       </main>
-      <Footer />
     </div>
   );
 };

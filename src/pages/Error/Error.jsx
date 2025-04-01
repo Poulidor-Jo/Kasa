@@ -1,4 +1,3 @@
-import Footer from '../../components/Footer/Footer';
 import './Error.scss'; // Import des styles spécifiques pour la page 404
 import { Link } from 'react-router-dom';
 
@@ -14,9 +13,6 @@ const Error = () => {
           Retourner sur la page d&apos;accueil
         </Link>
       </main>
-
-      {/* Footer */}
-      <Footer />
     </div>
   );
 };

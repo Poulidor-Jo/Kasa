@@ -1,6 +1,5 @@
 import { useParams, Navigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import Footer from '../../components/Footer/Footer';
 import Slides from '../../components/Slides/Slides';
 import DetailedCard from '../../components/DetailedCard/DetailedCard';
 import Collapse from '../../components/Collapse/Collapse';
@@ -15,7 +14,7 @@ const Accommodation = () => {
   useEffect(() => {
     const fetchAccommodation = async () => {
       try {
-        const response = await fetch('/src/data/accommodations.json');
+        const response = await fetch('/accommodations.json');
         if (!response.ok) {
           throw new Error('Erreur lors du chargement des données');
         }
@@ -73,7 +72,6 @@ const Accommodation = () => {
           />
         </div>
       </main>
-      <Footer />
     </div>
   );
 };
