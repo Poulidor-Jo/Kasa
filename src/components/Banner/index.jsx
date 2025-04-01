@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'; // Import PropTypes
-import './Banner.scss'; // Assure-toi que ce chemin est correct
+import './Banner.scss';
 
 const Banner = ({ customClass, title }) => {
   return (
