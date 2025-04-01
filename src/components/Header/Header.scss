@@ -39,9 +39,9 @@
         position: absolute;
         bottom: 0; // Place le soulignement sous le texte
         left: 0;
-        width: 100%; // Largeur égale au texte
-        height: 2px; // Épaisseur de la ligne
-        background-color: vars.$black; // Couleur de la ligne
+        width: 100%; 
+        height: 2px; 
+        background-color: vars.$black; 
       }
     }
   }
@@ -50,7 +50,7 @@
     margin:  20px 27px;
 
     &-nav {
-      gap: 26px;
+      gap: 16px;
 
       .nav-link {
         font-size: 12px;
@@ -63,7 +63,7 @@
     }
 
     &-logo img{
-      width: 145px; /* Logo mobile */
+      width: 120px; /* Logo mobile */
       height: auto;
     }
   }
