@@ -56,11 +56,11 @@
   }
   // Chevron rotation
   &-btn i {
-    transform: rotate(0deg); // Chevron pointe vers le haut par défaut
-    transition: transform 0.8s ease; // Transition fluide pour la rotation
+    transform: rotate(0deg);
+    transition: transform 0.8s ease; 
   }
   &-btn.open i {
-    transform: rotate(180deg); // Chevron pointe vers le bas si ouvert
+    transform: rotate(180deg); 
   }
 }
 /* Responsive Styles */
