@@ -4,7 +4,6 @@
 
 @use '../../assets/styles/variables' as vars;
 @use '../../assets/styles/mixins' as mixins;
-
 .collapse-container {
   display: flex;
   justify-content: space-between;
@@ -12,11 +11,9 @@
   max-width: 1200px;
   margin: 24px auto 0;
 }
-
 .collapse {
   flex: 1;
   position: relative;
-
   &-btn {
     display: flex;
     justify-content: space-between;
@@ -32,40 +29,36 @@
     cursor: pointer;
     width: 100%;
   }
-
   &-content {
     max-height: 0;
     background: vars.$white;
     font-size: 18px;
     font-weight: vars.$font-weight-regular;
-    padding: 15px;
+    padding: 0 20px;
     border-top: none;
     border-radius: 0 0 5px 5px;
-    transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
   }
-
   &-content.show {
     max-height: 500px; /* Ajuster selon le contenu */
-    padding: 16px 20px;
     background: vars.$lightgray; /* Ajout du fond couleur #F6F6F6 */
+    opacity: 1;
+    padding: 15px 20px;
+    transition: all 0.3s ease-in-out;
   }
-
   &-content ul {
     list-style: none;
   }
-
   // Chevron rotation
   &-btn i {
     transform: rotate(0deg); // Chevron pointe vers le haut par défaut
     transition: transform 0.8s ease; // Transition fluide pour la rotation
   }
-  
   &-btn.open i {
     transform: rotate(180deg); // Chevron pointe vers le bas si ouvert
   }
-
 }
-
 /* Responsive Styles */
 @include mixins.mobile {
   .collapse-container {
@@ -73,27 +66,22 @@
     gap: 20px;
     margin-top: 20px;
   }
-
   .collapse-btn {
     font-size: 13px;
   }
-
   .collapse-content {
     padding: 10px 15px;
     font-size: 13px;
-   
     }
   .collapse-content.show{
       font-size: 12px;
       padding-top: 13px;
     }
 }
-
 .collapse-btn i {
   transform: rotate(180deg); // Chevron pointe vers le bas par défaut
   transition: transform 0.3s ease; // Transition fluide pour la rotation
 }
-
 .collapse-btn.open i {
   transform: rotate(0deg); // Chevron pointe vers le haut si ouvert
 }
