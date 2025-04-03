@@ -38,7 +38,7 @@
     border-top: none;
     border-radius: 0 0 5px 5px;
     opacity: 0;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out, padding 0.3s ease-in-out, background-color 0.3s ease-in-out;
   }
   &-content.show {
     max-height: 500px; /* Ajuster selon le contenu */
@@ -70,7 +70,7 @@
     font-size: 13px;
   }
   .collapse-content {
-    padding: 10px 15px;
+    padding: 0px 15px;
     font-size: 13px;
     }
   .collapse-content.show{

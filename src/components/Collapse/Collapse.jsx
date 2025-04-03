@@ -15,7 +15,7 @@ const Collapse = ({ title, content }) => {
         <i className="fa-solid fa-chevron-down"></i> {/* Chevron par défaut */}
       </button>
       <div className={`collapse-content ${isOpen ? 'show' : ''}`}>
-        {typeof content === 'string' ? <p>{content}</p> : content}
+      {typeof content === 'string' ? <p>{content}</p> : content}
       </div>
     </div>
   );
