@@ -23,7 +23,7 @@ const Collapse = ({ title, content }) => {
 
 Collapse.propTypes = {
   title: PropTypes.string.isRequired,
-  content: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).isRequired,
+  content: PropTypes.string.isRequired,
 };
 
 export default Collapse;

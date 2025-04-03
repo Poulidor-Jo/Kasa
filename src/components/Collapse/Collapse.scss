@@ -25,9 +25,11 @@
     font-size: 18px;
     font-family: 'Montserrat', sans-serif;
     font-weight: vars.$font-weight-bold;
-    border-radius: 10px;
+    border-radius: 10px; 
     cursor: pointer;
     width: 100%;
+    position: relative; // Nécessaire pour le chevauchement
+    z-index: 2; // Place le bouton au-dessus du contenu
   }
   &-content {
     max-height: 0;
@@ -36,7 +38,7 @@
     font-weight: vars.$font-weight-regular;
     padding: 0 20px;
     border-top: none;
-    border-radius: 0 0 5px 5px;
+    border-radius: 0 0 5px 5px; // Coins inférieurs arrondis
     opacity: 0;
     transition: all 0.3s ease-in-out, padding 0.3s ease-in-out, background-color 0.3s ease-in-out;
   }
@@ -45,7 +47,9 @@
     background: vars.$lightgray; /* Ajout du fond couleur #F6F6F6 */
     opacity: 1;
     padding: 15px 20px;
+    border-radius: 0 0 10px 10px; // Coins inférieurs arrondis
     transition: all 0.3s ease-in-out;
+    margin-top: -10px; // Superpose légèrement le contenu avec le bouton
   }
   &-content ul {
     list-style: none;
@@ -79,9 +83,9 @@
     }
 }
 .collapse-btn i {
-  transform: rotate(180deg); // Chevron pointe vers le bas par défaut
-  transition: transform 0.3s ease; // Transition fluide pour la rotation
+  transform: rotate(180deg); 
+  transition: transform 0.3s ease; 
 }
 .collapse-btn.open i {
-  transform: rotate(0deg); // Chevron pointe vers le haut si ouvert
+  transform: rotate(0deg); 
 }
